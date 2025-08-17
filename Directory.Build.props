@@ -2,7 +2,6 @@
  <PropertyGroup>
    <ImplicitUsings>enable</ImplicitUsings>
    <Nullable>enable</Nullable>
-   <LangVersion>latest</LangVersion>
    <EnableNETAnalyzers>True</EnableNETAnalyzers>
    <AnalysisLevel>latest-recommended</AnalysisLevel>
    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
