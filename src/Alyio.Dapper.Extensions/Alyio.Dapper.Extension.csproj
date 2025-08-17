@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net8.0;net9.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Alyio.Dapper.Extensions</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Jon X</Authors>
+    <Description>Extension methods for Dapper to support extra/unmapped columns in .NET projects.</Description>
+    <PackageProjectUrl>https://github.com/looogos/Alyio.Dapper.Extensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/looogos/Alyio.Dapper.Extensions</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>dapper extensions sqlite unmapped columns</PackageTags>
+    <Copyright>MIT License</Copyright>
+    <IncludeSymbols>true</IncludeSymbols>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+  </ItemGroup>
+
+</Project>
