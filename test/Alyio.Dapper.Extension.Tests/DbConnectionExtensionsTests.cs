@@ -230,7 +230,11 @@ public sealed class DbConnectionExtensionsTests
         // BLOB: Should be mapped to byte[]
         Assert.True(extra.ContainsKey("ExtraBlob"));
         Assert.IsType<byte[]>(extra["ExtraBlob"]);
+#if NET8_0_OR_GREATER
         Assert.Equal([1, 2, 3, 4], (byte[])extra["ExtraBlob"]!);
+#else
+        Assert.Equal(new byte[] { 1, 2, 3, 4 }, (byte[])extra["ExtraBlob"]!);
+#endif
     }
 
     [Fact]
@@ -433,7 +437,11 @@ public sealed class DbConnectionExtensionsTests
         // BLOB: Should be mapped to byte[]
         Assert.True(extra.ContainsKey("ExtraBlob"));
         Assert.IsType<byte[]>(extra["ExtraBlob"]);
+#if NET8_0_OR_GREATER
         Assert.Equal([1, 2, 3, 4], (byte[])extra["ExtraBlob"]!);
+#else
+        Assert.Equal(new byte[] { 1, 2, 3, 4 }, (byte[])extra["ExtraBlob"]!);
+#endif
 
         // GUID: Should be mapped to Guid
         Assert.True(extra.ContainsKey("ExtraGuid"));
