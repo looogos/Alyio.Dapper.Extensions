@@ -41,13 +41,13 @@ jobs:
         run: dotnet --info
 
       - name: Restore Dependencies
-        run: dotnet restore /p:TargetFrameworks="${{ matrix.framework }}"
+        run: dotnet restore -p:TargetFrameworks="${{ matrix.framework }}"
 
       - name: Build Project
         run: dotnet build --no-restore -c Release --framework ${{ matrix.framework }}
 
       - name: Run Tests
-        run: dotnet test --no-build --no-restore -c Release --framework ${{ matrix.framework }} /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        run: dotnet test --no-build --no-restore -c Release --framework ${{ matrix.framework }} -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
 
   pack_and_publish:
     needs: build_and_test
